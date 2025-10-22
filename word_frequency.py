@@ -36,6 +36,8 @@ def calculate(sentence):
     for i in list1:
         if i[-1] == '.':
             i = i[0:len(i) - 1]
+        if i[-1] == ',':
+            i = i[0:len(i) - 1]
         if i in list2:
             list2[i] += 1
         else:
