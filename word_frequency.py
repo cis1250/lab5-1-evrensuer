@@ -24,3 +24,29 @@ def is_sentence(text):
         return False
 
     return True
+    
+def display(list):
+    for i in list:
+        print(i," = ",list[i])
+
+def calculate(sentence):
+    sentence=sentence.lower()
+    list1=sentence.split()
+    list2={}
+    for i in list1:
+        if i[-1] == '.':
+            i = i[0:len(i) - 1]
+        if i in list2:
+            list2[i] += 1
+        else:
+            list2.update({i: 1})
+    display(list2)
+        
+
+user_sentence = input("Enter a sentence: ")
+
+while (is_sentence(user_sentence) == False):
+    print("This does not meet the criteria for a sentence.")
+    user_sentence = input("Enter a sentence: ")
+
+calculate(user_sentence)
